@@ -7,7 +7,7 @@ un premier menu nous proposant :
 
 - outils réseaux (sous menu)
 
-configuration réseau (ip, Gateway, mac...)
+configuration réseau (ip, Gateway, mac...) ;
 test de connexion réseau (ping)
 
 - outils d'administration (sous menu)
@@ -16,8 +16,8 @@ ajouter/suppprimer un utilisateur
 
 - installation de logiciels (sous menu)
 
-installer et lancer htop
-installer serveur httpd apache2/Nginx
+installer et lancer htop ; 
+installer serveur httpd apache2/Nginx ;
 installer cockpit
 
 
