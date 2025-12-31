@@ -1,16 +1,12 @@
 #!/bin/bash
-
 ## VARIABLES
-
 RED="\e[31m"
 GREEN="\e[32m"
 WHITE="\e[37m"
 RESET="\e[0m" #balise pour stopper la couleur
 BOLD="\e[1m" #afficher en gras
 UNDERLINE="\e[4m" #souligner
-
 ## FONCTIONS
-
 show_menu(){
     clear
     echo -e "${WHITE}"
@@ -36,14 +32,10 @@ EOF
     echo
     echo -ne "${WHITE}  Votre choix : ${RESET}"
 }
-
-
 ## BOUCLE PRINCIPALE
-
 while true; do
     show_menu
     read choice
-
     case "$choice" in
         1)
             reseaux.sh
