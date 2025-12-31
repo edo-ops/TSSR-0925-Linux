@@ -88,8 +88,8 @@ while true; do
                         echo ""
                         echo -e "${YELLOW}Au revoir${RESET}"
                         echo ""
-                        sleep 3
-                        clear
+                        sleep 1
+                        ./mainmenu.sh
                         exit 0
                         ;;
                 *)
