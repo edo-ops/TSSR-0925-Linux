@@ -16,6 +16,7 @@ GW=$(ip route | grep default | awk '{print $3}')
 # Fonctions
 menu()
 {
+        echo -e "${BLUE}"
 cat <<'EOF'
 ==========================================
 ==========================================
@@ -28,11 +29,14 @@ cat <<'EOF'
 ==========================================
 ==========================================
 EOF
+        echo -e "${RESET}"
+
+        echo
         echo -e "${BLUE}1) afficher l'adresse IP${RESET}"
         echo -e "${BLUE}2) afficher l'adresse MAC${RESET}"
         echo -e "${BLUE}3) afficher la Gateway${RESET}"
         echo -e "${BLUE}4) tester le ping${RESET}"
-        echo -e "${BLUE}5) quitter${RESET}"
+        echo -e "${YELLOW}5) quitter${RESET}"
 }
 
 error()
