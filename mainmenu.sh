@@ -21,6 +21,11 @@ show_menu(){
 
 
 
+EOF
+echo -e "${RESET}"  
+  
+ echo -e "${WHITE}"
+ cat << 'EOF'
   1) Outils réseaux
   2) Administration
   3) Logiciel
@@ -57,4 +62,5 @@ while true; do
             ;;
     esac
 done
+
 
