@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Script d'administration Linux
 # Doit être exécuté en tant que root
 
@@ -64,3 +66,4 @@ main_menu
 ~
 ~
 -- (insertion) VISUEL --                                                                         62        1,1          Tout
+
