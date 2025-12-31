@@ -64,6 +64,7 @@ test_ping()
 while true; do
         clear
         menu
+        echo
         read -p "Choisir une action : " choice
 
         case "$choice" in
