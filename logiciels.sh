@@ -1,0 +1,74 @@
+#!/bin/bash
+
+#installationdes logiciels
+# VARIABLES
+HTOP_PACKAGE="htop"
+APACHE_PACKAGE="apache2"
+NGINX_PACKAGE="nginx"
+COCKPIT_PACKAGE="cockpit"
+
+APACHE_SERVICE="apache2"
+NGINX_SERVICE="nginx"
+COCKPIT_SERVICE="cockpit"
+
+# FONCTIONS
+
+update_system() {
+    echo "Mise à jour des dépôts..."
+    apt update -y
+}
+
+install_htop() {
+    echo "Installation de htop..."
+    apt install -y "$HTOP_PACKAGE"
+}
+
+install_apache() {
+    echo "Installation d'Apache2..."
+    apt install -y "$APACHE_PACKAGE"
+    systemctl enable "$APACHE_SERVICE"
+    systemctl start "$APACHE_SERVICE"
+}
+
+install_nginx() {
+    echo "Installation de Nginx..."
+    apt install -y "$NGINX_PACKAGE"
+    systemctl enable "$NGINX_SERVICE"
+    systemctl start "$NGINX_SERVICE"
+}
+
+choose_web_server() {
+    echo "Choisissez le serveur web :"
+    echo "1 - Apache2"
+    echo "2 - Nginx"
+    read -r CHOICE
+
+    if [ "$CHOICE" = "1" ]; then
+        install_apache
+    elif [ "$CHOICE" = "2" ]; then
+        install_nginx
+    else
+        echo "Choix invalide"
+    fi
+}
+
+install_cockpit() {
+    echo "Installation de Cockpit..."
+    apt install -y "$COCKPIT_PACKAGE"
+    systemctl enable "$COCKPIT_SERVICE"
+    systemctl start "$COCKPIT_SERVICE"
+}
+
+# CORPS PRINCIPAL (MAIN)
+
+main() {
+    update_system
+    install_htop
+    choose_web_server
+    install_cockpit
+
+    echo "Installation terminée"
+    echo "➡ Cockpit : https://IP_DU_SERVEUR:9090"
+}
+
+main
