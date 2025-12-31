@@ -2,7 +2,7 @@
 
 
 ##################
-Bienvenue dans la classe tssr0925 vivement demain
+Bienvenue dans la classe tssr-0925 vivement demain
 ##################
 
 
