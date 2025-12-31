@@ -48,7 +48,7 @@ EOF
     read choice
 
     case $choice in
-        1) network_menu ;;
+        1) ./Script user admin.sh ;;
         2) admin_menu ;;
         3) software_menu ;;
         4) exit 0 ;;
@@ -66,4 +66,5 @@ main_menu
 ~
 ~
 -- (insertion) VISUEL --                                                                         62        1,1          Tout
+
 
