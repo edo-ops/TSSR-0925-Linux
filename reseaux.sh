@@ -32,10 +32,10 @@ EOF
         echo -e "${RESET}"
 
         echo
-        echo -e "${BLUE}1) afficher l'adresse IP${RESET}"
-        echo -e "${BLUE}2) afficher l'adresse MAC${RESET}"
-        echo -e "${BLUE}3) afficher la Gateway${RESET}"
-        echo -e "${BLUE}4) tester le ping${RESET}"
+        echo -e "${CYAN}1) afficher l'adresse IP${RESET}"
+        echo -e "${CYAN}2) afficher l'adresse MAC${RESET}"
+        echo -e "${CYAN}3) afficher la Gateway${RESET}"
+        echo -e "${CYAN}4) tester le ping${RESET}"
         echo -e "${YELLOW}5) quitter${RESET}"
 }
 
