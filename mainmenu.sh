@@ -9,7 +9,7 @@ UNDERLINE="\e[4m" #souligner
 ## FONCTIONS
 show_menu(){
     clear
-    echo -e "${WHITE}"
+    echo -e "${GREEN}"
     cat << 'EOF'
 
   ___       _             _         _       _                 _    _
@@ -26,6 +26,7 @@ show_menu(){
   3) Logiciel
 
 EOF
+echo -e "${RESET}"
     echo
     echo -e "${RED}  4) Quitter${RESET}"
     echo
@@ -56,3 +57,4 @@ while true; do
             ;;
     esac
 done
+
