@@ -9,7 +9,7 @@ UNDERLINE="\e[4m" #souligner
 ## FONCTIONS
 show_menu(){
     clear
-    echo -e "${RED}"
+    echo -e "${GREEN}"
     cat << 'EOF'
 
   ___       _             _         _       _                 _    _
@@ -62,6 +62,7 @@ while true; do
             ;;
     esac
 done
+
 
 
 
