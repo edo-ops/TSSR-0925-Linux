@@ -48,8 +48,8 @@ EOF
     read choice
 
     case $choice in
-        1) ./Script user admin.sh ;;
-        2) admin_menu ;;
+        1) reseaux.sh ;;
+        2) administration ;;
         3) software_menu ;;
         4) exit 0 ;;
         *) echo -e "${RED}Option invalide${NC}"; pause; main_menu ;;
@@ -66,5 +66,6 @@ main_menu
 ~
 ~
 -- (insertion) VISUEL --                                                                         62        1,1          Tout
+
 
 
