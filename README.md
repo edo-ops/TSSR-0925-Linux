@@ -30,4 +30,5 @@ cd TSSR-0925-Linux/
 chmod +x *.sh
 apt install dos2unix
 dos2unix *.sh
+./mainmenu.sh
 ```
