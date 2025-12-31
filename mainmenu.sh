@@ -49,8 +49,8 @@ EOF
 
     case $choice in
         1) reseaux.sh ;;
-        2) administration ;;
-        3) software_menu ;;
+        2) admin.sh ;;
+        3) logiciels.sh ;;
         4) exit 0 ;;
         *) echo -e "${RED}Option invalide${NC}"; pause; main_menu ;;
     esac
@@ -66,6 +66,7 @@ main_menu
 ~
 ~
 -- (insertion) VISUEL --                                                                         62        1,1          Tout
+
 
 
 
