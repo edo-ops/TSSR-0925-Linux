@@ -1,34 +1,21 @@
 #!/bin/bash
 
-# Script d'administration Linux
-# Doit être exécuté en tant que root
+## VARIABLES
 
-# Couleurs pour l'affichage
-RED='\033[0;31m'
-GREEN='\033[0;32m'
-YELLOW='\033[1;33m'
-BLUE='\033[0;34m'
-NC='\033[0m' # No Color
+RED="\e[31m"
+GREEN="\e[32m"
+WHITE="\e[37m"
+RESET="\e[0m" #balise pour stopper la couleur
+BOLD="\e[1m" #afficher en gras
+UNDERLINE="\e[4m" #souligner
 
-# Vérification des privilèges root
-check_root() {
-    if [ "$EUID" -ne 0 ]; then
-        echo -e "${RED}Ce script doit être exécuté en tant que root${NC}"
-        exit 1
-    fi
-}
+## FONCTIONS
 
-# Fonction pour pause
-pause() {
-    echo -e "\n${YELLOW}Appuyez sur Entrée pour continuer...${NC}"
-    read
-}
-
-# Menu principal
-main_menu() {
+show_menu(){
     clear
-echo -e "${BLUE}"
-    cat << "EOF"
+    echo -e "${WHITE}"
+    cat << 'EOF'
+
   ___       _             _         _       _                 _    _               
  / _ \     | |           (_)       (_)     | |               | |  (_)              
 / /_\ \  __| | _ __ ___   _  _ __   _  ___ | |_  _ __   __ _ | |_  _   ___   _ __  
@@ -36,37 +23,44 @@ echo -e "${BLUE}"
 | | | || (_| || | | | | || || | | || |\__ \| |_ | |   | (_| || |_ | || (_) || | | |
 \_| |_/ \__,_||_| |_| |_||_||_| |_||_||___/ \__||_|    \__,_| \__||_| \___/ |_| |_|
 
-EOF
-    echo -e "${NC}"
-    echo ""
-    echo "1. Outils réseaux"
-    echo "2. Outils d'administration"
-    echo "3. Installation de logiciels"
-    echo "4. Quitter"
-    echo ""
-    echo -n "Choisissez une option: "
-    read choice
 
-    case $choice in
-        1) reseaux.sh ;;
-        2) admin.sh ;;
-        3) logiciels.sh ;;
-        4) exit 0 ;;
-        *) echo -e "${RED}Option invalide${NC}"; pause; main_menu ;;
-    esac
+
+  1) Outils réseaux
+  2) Administration
+  3) Logiciel
+
+EOF
+    echo
+    echo -e "${RED}  4) Quitter${RESET}"
+    echo
+    echo
+    echo -ne "${WHITE}  Votre choix : ${RESET}"
 }
 
-# Programme principal
-check_root
-main_menu
-~
-~
-~
-~
-~
-~
--- (insertion) VISUEL --                                                                         62        1,1          Tout
 
+## BOUCLE PRINCIPALE
 
+while true; do
+    show_menu
+    read choice
 
-
+    case "$choice" in
+        1)
+            reseaux.sh
+            ;;
+        2)
+            admin.sh
+            ;;
+        3)
+            ./logiciels.sh
+            ;;
+        4)
+            echo -e "${BOLD}Au revoir ! 👋${RESET}"
+            exit 0
+            ;;
+        *)
+            echo -e "Choix invalide, veuillez réessayer"
+            sleep 1
+            ;;
+    esac
+done
